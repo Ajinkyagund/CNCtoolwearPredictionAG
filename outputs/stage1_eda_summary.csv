@@ -1,0 +1,14 @@
+Item,Value
+Rows (machining runs),167
+Tools (cases),16
+Runs per tool (min / median / max),1 / 9 / 23
+Input features,52
+Missing VB values before interpolation,21
+Missing feature cells,0
+Constant features (dropped inside the pipeline),0
+Flank wear VB mean (mm),0.322
+Flank wear VB min / max (mm),0.00 / 1.53
+RUL min / max (runs),0 / 22
+Class balance: Healthy,61 (36.5%)
+Class balance: Moderate,52 (31.1%)
+Class balance: Worn,54 (32.3%)

@@ -1,0 +1,36 @@
+# Central settings for the whole project.
+# Change thresholds, split size, CV settings and ablation groups HERE, not in the code.
+seed: 42                       # one seed drives the split, CV folds and all models
+
+labels:
+  healthy_limit: 0.20          # flank wear VB (mm) below this  -> Healthy
+  worn_limit: 0.40             # flank wear VB (mm) at/above this -> Worn (replace the tool)
+  class_names: [Healthy, Moderate, Worn]
+
+split:                         # Stage 2
+  test_fraction: 0.25          # share of TOOLS held out as the test set (used once, Stage 7)
+
+cv:                            # Stage 4: baselines vs models, repeated stratified group CV
+  n_splits: 4
+  n_repeats: 3
+
+tuning:                        # Stage 5: nested CV = outer folds (score) + inner grid search (tune)
+  outer_splits: 4
+  outer_repeats: 1
+  inner_splits: 3
+
+ablation:                      # Stage 6: remove one component at a time
+  n_splits: 4
+  n_repeats: 3
+  groups:                      # a feature belongs to a group if its name equals / starts with / ends with a pattern
+    "Motor current (smcAC, smcDC)": [smcAC, smcDC]
+    "Vibration (table, spindle)": [vib_table, vib_spindle]
+    "Acoustic emission (table, spindle)": [AE_table, AE_spindle]
+    "Cutting parameters (DOC, feed, material)": [DOC, feed, material]
+    "Run number": [run]
+    "Shape statistics (skewness, kurtosis)": [_skew, _kurt]
+    "Peak statistics (max, min, peak-to-peak)": [_max, _min, _ptp]
+
+explain:                       # Stage 8: SHAP
+  n_background: 25
+  n_explain: 60

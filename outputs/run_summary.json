@@ -1,0 +1,84 @@
+{
+  "seed": 42,
+  "quick_mode": false,
+  "split_seed_used": 42,
+  "train_tools": 11,
+  "test_tools": 5,
+  "train_runs": 120,
+  "test_runs": 47,
+  "models": {
+    "rul": {
+      "name": "Random Forest",
+      "params": {
+        "max_depth": 4,
+        "min_samples_leaf": 3
+      },
+      "nested_cv": {
+        "MAE": {
+          "mean": 3.4092661204200794,
+          "std": 0.9359783040341713
+        },
+        "RMSE": {
+          "mean": 4.148371265071033,
+          "std": 1.2408691624574524
+        },
+        "R2": {
+          "mean": -0.37653362765407167,
+          "std": 1.2248155752624081
+        }
+      },
+      "test": {
+        "MAE": 2.27503335970235,
+        "RMSE": 3.070614086496697,
+        "R2": 0.33660549280685426
+      },
+      "best_baseline": {
+        "name": "Baseline: mean RUL",
+        "RMSE": 5.176194610210511
+      },
+      "improvement_vs_best_baseline": 0.1985673689918853
+    },
+    "wear": {
+      "name": "Logistic Regression",
+      "params": {
+        "C": 0.1
+      },
+      "nested_cv": {
+        "Accuracy": {
+          "mean": 0.6706264323911383,
+          "std": 0.03799306910874135
+        },
+        "Precision": {
+          "mean": 0.6595238095238096,
+          "std": 0.10736308935292609
+        },
+        "Recall": {
+          "mean": 0.6442624913213149,
+          "std": 0.05981195250208489
+        },
+        "F1": {
+          "mean": 0.6220321498185275,
+          "std": 0.09161347927411817
+        }
+      },
+      "test": {
+        "Accuracy": 0.6808510638297872,
+        "Precision": 0.72140522875817,
+        "Recall": 0.7287449392712549,
+        "F1": 0.6564102564102564,
+        "ROC-AUC": 0.9104730387431625
+      },
+      "best_baseline": {
+        "name": "Baseline: run-number rule",
+        "F1": 0.4664887480729443
+      },
+      "improvement_vs_best_baseline": 0.3334344127015493
+    }
+  },
+  "versions": {
+    "python": "3.13.3",
+    "scikit-learn": "1.6.1",
+    "pandas": "2.2.3",
+    "numpy": "2.2.5"
+  }
+}

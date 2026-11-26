@@ -1,0 +1,14 @@
+# Exact versions this project was developed and tested with (Python 3.13.18).
+# Use for exact reproducibility on a laptop:  pip install -r requirements-lock.txt
+# In Google Colab prefer requirements.txt (Colab already ships many of these packages).
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+joblib==1.6.0
+pyyaml==6.0.3
+xgboost==3.4.1
+shap==0.54.1
+streamlit==1.67.0
+plotly==7.1.0

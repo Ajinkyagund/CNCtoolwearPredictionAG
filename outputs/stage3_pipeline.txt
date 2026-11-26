@@ -1,0 +1,5 @@
+Preprocessing Pipeline (identical for every model, fitted only on training data):
+1. impute: SimpleImputer
+2. drop_constant: VarianceThreshold
+3. scale: StandardScaler
+4. clip: FunctionTransformer

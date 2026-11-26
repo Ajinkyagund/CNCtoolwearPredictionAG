@@ -1,0 +1,7 @@
+Model,Best parameters,Tuning-CV score
+Ridge Regression,"{""alpha"": 1}",5.154247963133397
+SVR,"{""C"": 10, ""gamma"": 0.01}",4.573067691841314
+Random Forest,"{""max_depth"": 4, ""min_samples_leaf"": 3}",4.687632656420596
+Gradient Boosting,"{""learning_rate"": 0.05, ""max_depth"": 3, ""n_estimators"": 100}",4.369153950403862
+KNN,"{""n_neighbors"": 9}",5.131556740744089
+XGBoost,"{""learning_rate"": 0.1, ""max_depth"": 3, ""n_estimators"": 150}",4.490853325060662
